@@ -1,5 +1,7 @@
 # **Slot 1: Course Intro & TensorFlow Basics**
 
+**Ngày học:** 05-01-2026
+
 **Môn học:** AI Development with TensorFlow (DAT301m)
 
 **Tài liệu buổi học:**
