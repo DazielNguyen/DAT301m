@@ -27,7 +27,7 @@
 ### 3. Lỗi phổ biến 
 - Cách khắc phục khi chạy Tensorflow mà không dùng được GPU để chạy model. (Thường sẽ gặp trên các máy Window)
 
-[Installing TensorFlow 2 GPU [Step-by-Step Guide]d](https://neptune.ai/blog/installing-tensorflow-2-gpu-guide)
+[Installing TensorFlow 2 GPU [Step-by-Step Guide]](https://neptune.ai/blog/installing-tensorflow-2-gpu-guide)
 
 ---
 
