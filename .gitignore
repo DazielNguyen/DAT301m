@@ -1,1 +1,11 @@
 .DS_Store
+
+# LAB_02 data folder
+labs/LAB_02_Built_Model_Happy_Sad/data/
+labs/LAB_02_Built_Model_Happy_Sad/9 Facial Expressions you need/
+
+# Model files (optional - uncomment if you want to ignore)
+# labs/LAB_02_Built_Model_Happy_Sad/*.keras
+
+# Log files
+labs/LAB_02_Built_Model_Happy_Sad/logs/
