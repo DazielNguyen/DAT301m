@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\geometry{a4paper, left=2.5cm, right=2.0cm, top=2.5cm, bottom=2.5cm}
+
+\title{\textbf{PROJECT PROPOSAL}\\ 
+\Large Hand Gesture-Based Spotify Music Controller}
+\author{Project Team: [Team 3]}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This project proposes the development of a computer vision system that allows users to control the Spotify music streaming application entirely through touchless hand gestures. The system utilizes Google's MediaPipe library to detect and track hand landmarks in real-time via a webcam. These gestures are programmed to map directly to control commands using the Spotify Web API, providing a convenient and seamless user experience when hands-free operation is required (e.g., while cooking, exercising, or driving).
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+In the era of smart homes, touchless interaction is becoming an inevitable trend. Spotify is one of the world's most popular music streaming platforms. However, manual control via a screen or mouse is not always convenient. This project aims to combine advanced Computer Vision technology with music APIs to create a novel, natural, and more accessible interaction method.
+
+\section{Project Objectives}
+The project aims to achieve the following specific objectives:
+\begin{itemize}[label=\textbullet]
+    \item \textbf{Hand Detection and Tracking:} Implement MediaPipe Hand Tracking to accurately identify 21 hand landmarks in real-time with low latency.
+    \item \textbf{Gesture Classification:} Develop an algorithm to recognize at least 5 basic gestures, including: Fist, Open Palm, Index Finger Pointing, Swipe Left/Right, and Pinching (distance between two fingers).
+    \item \textbf{Spotify Web API Integration:} Link recognized gestures to corresponding actions on Spotify: Play/Pause, Next/Previous Track, and Volume Up/Down.
+    \item \textbf{Performance Optimization:} Ensure the system runs stably on standard computer hardware at a minimum speed of 30 FPS.
+\end{itemize}
+
+\section{Scope and Constraints}
+\subsection{Scope}
+\begin{itemize}
+    \item The system operates on Desktop environments (Windows/macOS/Ubuntu) using Python.
+    \item Uses a standard webcam as the sole input device.
+    \item Requires a Spotify Premium account (a mandatory requirement from the Spotify API to control playback).
+\end{itemize}
+
+\subsection{Constraints}
+\begin{itemize}
+    \item Dependent on ambient lighting conditions. Low-light environments may reduce MediaPipe's accuracy.
+    \item Currently supports single-hand control to minimize computational complexity.
+\end{itemize}
+
+\section{System Architecture and Methodology}
+
+The system is designed as a pipeline consisting of three main modules:
+
+\subsection{Input and Preprocessing Module}
+Uses the \textbf{OpenCV} library to capture video streams from the webcam. Frames are converted to the RGB color space to ensure compatibility with MediaPipe.
+
+\subsection{Gesture Recognition Module}
+Utilizes \textbf{MediaPipe Hands} to extract the spatial coordinates (x, y, z) of 21 landmarks on the hand. From these coordinates, the system calculates:
+\begin{itemize}
+    \item The Euclidean distance between fingertips.
+    \item The angles of finger joints using analytical geometry or lightweight Machine Learning models (such as K-Nearest Neighbors - KNN or Support Vector Machine - SVM).
+\end{itemize}
+
+\subsection{Execution Module}
+Uses the \textbf{Spotipy} library (a Python client for the Spotify Web API). The gestures are mapped as follows:
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Hand Gesture}         & \textbf{Spotify Action} \\ \midrule
+Fist                          & Play / Pause            \\
+Thumb pointing Right          & Next Track              \\
+Thumb pointing Left           & Previous Track          \\
+Index \& Thumb Distance       & Volume Control          \\ \bottomrule
+\end{tabular}
+\caption{Gesture and Action Mapping}
+\end{table}
+
+\section{Implementation Timeline}
+The project is expected to be completed in 6 weeks, with the following milestones:
+
+\begin{itemize}
+    \item \textbf{Week 1:} Research MediaPipe documentation and register a Spotify Developer Account.
+    \item \textbf{Week 2:} Program the hand detection module using OpenCV and MediaPipe.
+    \item \textbf{Week 3:} Develop the Gesture Recognition algorithm.
+    \item \textbf{Week 4:} Integrate the Spotify API via the Spotipy library.
+    \item \textbf{Week 5:} Conduct full System Testing and optimize latency.
+    \item \textbf{Week 6:} Write the final report and record a project demo video.
+\end{itemize}
+
+\section{Expected Outcomes}
+\begin{itemize}
+    \item A complete source code written in Python.
+    \item A smooth-running system with a response time of $\le 1$ second from gesture to music change.
+    \item A detailed project report and installation guide.
+\end{itemize}
+
+\section{Conclusion}
+This project serves as a perfect stepping stone to apply Computer Vision to real-world problems. By combining MediaPipe and the Spotify API, the project not only holds high academic value in image processing and system integration but also delivers a highly practical application.
+
+\end{document}

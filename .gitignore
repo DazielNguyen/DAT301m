@@ -11,3 +11,5 @@ labs/LAB_02_Built_Model_Happy_Sad/*.keras
 
 # Log files
 labs/LAB_02_Built_Model_Happy_Sad/logs/
+
+labs/LAB_02_Built_Model_Happy_Sad/demo_lab_02_dat.mov
