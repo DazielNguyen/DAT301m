@@ -1,0 +1,7 @@
+# **Slot 05: ÔN TẬP CÁCH TÍNH TOÁN SHALLOW NEURAL NETWORK & DEEP NEURAL NETWORK**
+
+**Ngày học: 15/01/2026**
+
+![SNN](/images/slot_05/IMG_0120.JPG)
+
+![DNN]()
